@@ -24,7 +24,7 @@ ev_chargers = get_ev_chargers(api_key, 1)
 
 user_name = "eddison"
 ps = os.getenv("local_pass")
-engine = create_engine("postgresql+psycopg2://{}:{}@localhost:5432/DB_Development".format(user_name,ps))
-
+#engine = create_engine("postgresql+psycopg2://{}:{}@localhost:5432/DB_Development".format(user_name,ps))
+engine = create_engine("user=postgres.jxrgyfttzhlkctbcptfk password=[YOUR-PASSWORD] host=aws-0-ca-central-1.pooler.supabase.com port=5432 dbname=postgres")
 
 ev_chargers.to_sql("ev_charger",con=engine, if_exists="replace")
